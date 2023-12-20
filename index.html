@@ -4,10 +4,13 @@
         <meta charset="UTF-8" />
         <title>간단한 자바스크립트 투두 리스트</title>
     </head>
+    <link rel="stylesheet" href="index.css" />
     <body>
-        <h1>나의 투두 리스트</h1>
-        <input type="text" id="taskInput" placeholder="할 일을 입력하세요" />
-        <button onclick="addTask()">추가</button>
+        <h1 class="title">나의 투두 리스트</h1>
+        <div class="inputContainer">
+            <input type="text" class="inputBox" id="taskInput" placeholder="할 일을 입력하세요" />
+            <button onclick="addTask()">+</button>
+        </div>
         <ul id="taskList"></ul>
 
         <script>
@@ -15,11 +18,13 @@
                 var taskInput = document.getElementById('taskInput');
                 var taskList = document.getElementById('taskList');
                 var newTask = document.createElement('li');
-                newTask.textContent = taskInput.value;
-
+                newTask.innerHTML = taskInput.value + ' <button onclick="deleteTask(this)">x</button>';
                 taskList.appendChild(newTask);
-
                 taskInput.value = '';
+            }
+
+            function deleteTask(task) {
+                task.parentNode.remove();
             }
         </script>
     </body>

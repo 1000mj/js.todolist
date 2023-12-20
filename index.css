@@ -1,17 +1,29 @@
 body {
     background-color: wheat;
 }
+ul,
+li {
+    list-style: none;
+}
 h1 {
     font-size: 3rem;
     text-align: center;
 }
-.input-box {
-    width: 100%;
-    height: 500px;
+.title {
     text-align: center;
-    margin-top: 300px;
+    font-size: 3.5rem;
 }
-input {
-    width: 200px;
-    height: 30px;
+.inputContainer {
+    width: 100%;
+    height: 200px;
+    text-align: center;
+}
+.inputBox {
+    width: 400px;
+    height: 60px;
+    border: 3px solid black;
+}
+::placeholder {
+    font-size: 2rem;
+    text-align: center;
 }
