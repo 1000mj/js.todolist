@@ -1,0 +1,17 @@
+body {
+    background-color: wheat;
+}
+h1 {
+    font-size: 3rem;
+    text-align: center;
+}
+.input-box {
+    width: 100%;
+    height: 500px;
+    text-align: center;
+    margin-top: 300px;
+}
+input {
+    width: 200px;
+    height: 30px;
+}
