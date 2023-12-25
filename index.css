@@ -48,14 +48,20 @@ ul {
     margin: 0;
 }
 li {
+    width: 70%;
     font-size: 1.8rem;
-    margin-bottom: 10px;
     background-color: #fff;
     padding: 8px;
+    border: 2px solid black;
     border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    overflow: auto;
+    white-space: nowrap;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-bottom: 10px;
 }
 li button {
     background-color: red;
@@ -69,4 +75,7 @@ li button {
 }
 li button:hover {
     background-color: #e53935;
+}
+li span {
+    flex-grow: 1;
 }
