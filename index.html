@@ -6,6 +6,7 @@
     </head>
     <link rel="stylesheet" href="index.css" />
     <body>
+        <div id="todayDate"></div>
         <h1 class="title">Todo-List</h1>
         <div class="inputContainer">
             <input type="text" class="inputBox" id="taskInput" placeholder="할 일을 입력하세요" />
@@ -26,6 +27,16 @@
             function deleteTask(task) {
                 task.parentNode.remove();
             }
+        </script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var today = new Date();
+
+                var formattedDate =
+                    today.getFullYear() + '년 ' + (today.getMonth() + 1) + '월 ' + today.getDate() + '일';
+
+                document.getElementById('todayDate').textContent = formattedDate;
+            });
         </script>
     </body>
 </html>

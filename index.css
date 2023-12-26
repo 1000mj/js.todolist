@@ -79,3 +79,10 @@ li button:hover {
 li span {
     flex-grow: 1;
 }
+
+#todayDate {
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin-top: 100px;
+}
