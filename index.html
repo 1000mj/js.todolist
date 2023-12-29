@@ -15,17 +15,34 @@
         <ul id="taskList"></ul>
 
         <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                loadTasks();
+            });
+
             function addTask() {
                 var taskInput = document.getElementById('taskInput');
                 var taskList = document.getElementById('taskList');
                 var newTask = document.createElement('li');
                 newTask.innerHTML = taskInput.value + ' <button onclick="deleteTask(this)">x</button>';
                 taskList.appendChild(newTask);
+                saveTasks();
                 taskInput.value = '';
             }
 
             function deleteTask(task) {
                 task.parentNode.remove();
+                saveTasks();
+            }
+
+            function saveTasks() {
+                var taskList = document.getElementById('taskList').innerHTML;
+                localStorage.setItem('tasks', taskList);
+            }
+            function loadTasks() {
+                var savedTasks = localStorage.getItem('tasks');
+                if (savedTasks) {
+                    document.getElementById('taskList').innerHTML = savedTasks;
+                }
             }
         </script>
         <script>
